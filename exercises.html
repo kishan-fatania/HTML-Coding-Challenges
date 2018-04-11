@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables</title>
+    <script src="js/myScripts.js"></script>
+</head>
+<body>
+This function accepts a number and outputs its square.
+
+<script>
+    function square(number){
+        var x = number ** 2;
+        document.write(x);
+    }
+    square(5);
+</script>
+
+<br>
+
+This function accepts 3 numbers and returns the sum of them
+<script>
+    function sum(p1, p2, p3){
+        var x = p1;
+        var y = p2;
+        var z = p3;
+        var a = x + y + z;
+        document.write(a);
+    }
+    sum(1,2,4);
+</script>
+
+<br>
+
+This function creates a Person object with three values: name, age and occupation. It then outputs the contents of that object before editing and outputting them again.
+<br>
+
+<script>
+
+   function personEdit() {
+
+       var person = {
+           name: "Kishan",
+           age: 22,
+           occupation: "Trainee",
+       }
+
+       document.writeln(person.name);
+       document.writeln(person.age);
+       document.writeln(person.occupation);
+
+       person.name = "Awais";
+       person.age = 24;
+       person.occupation = "Consultant";
+
+       document.writeln("→");
+       document.writeln(person.name);
+       document.writeln(person.age);
+       document.writeln(person.occupation);
+   }
+
+personEdit();
+
+</script>
+
+
+
+<br>
+Creating buttons that call the above functions when clicked.
+<br>
+
+<input type="button" onclick="square(5)" value="Calculate 5 squared" />
+<input type="button" onclick="sum(5,5,5)" value="Calculate the sum of 5 + 5 + 5" />
+
+
+
+
+
+
+
+<script>
+    function ageEdit(i){
+        var newAge = person.age + i;
+        document.write(newAge);
+    }
+    var person = {
+        name: "Kishan",
+        age: 22,
+        occupation: "Trainee",
+    }
+</script>
+
+<input type="button" onclick="ageEdit(5)" value="Increase Kishan's age by 5 years" />
+
+</body>
+</html>
