@@ -115,13 +115,62 @@ Creating buttons that call the above functions when clicked.
             occupation: document.getElementById("occupationText").value,
         }
 
-        document.getElementById("yourName").innerText=(userPerson.name);
-        document.getElementById("yourAge").innerText=(userPerson.age);
-        document.getElementById("yourOcc").innerText=(userPerson.occupation);
+        document.getElementById("yourName").innerText=("Name: "+ userPerson.name);
+        document.getElementById("yourAge").innerText=("Age: "+userPerson.age);
+        document.getElementById("yourOcc").innerText=("Occupation: "+userPerson.occupation);
+    }
+</script>
+<br/>
+<br/>
+Below is an example of the output of the toUpperCase(); function with input: "He said my name is Elliott."
+<P id="elliot"></P>
+
+<script>
+    function upperCase(){
+    var txt = "He said my name is Elliott.";
+    document.getElementById("elliot").innerText=(txt.toUpperCase());
+    }
+</script>
+
+<input type="button" onclick="upperCase()" value="Make Uppercase" />
+<br/>
+<br/>
+Below is an example of the output of the concatenate function with input: String: "My age is " and int: 22
+
+<P id="cat"></P>
+<script>
+    function concat(){
+        var txt1 = "My age is ";
+        var intAge = 22;
+        document.getElementById("cat").innerText=(txt1 + intAge);
+    }
+</script>
+
+<input type="button" onclick="concat()" value="Concat Name+Age" />
+<p id="array">
+</p>
+
+<script>
+    var myNames = [' Awais ', ' Kishan ', ' Deepi '];
+    document.getElementById("array").innerHTML= myNames;
+
+    function addArray(){
+    myNames.push(" Suleman ");
+    document.getElementById("array").innerHTML= myNames;
+    }
+</script>
+
+<script>
+    function removeArray(){
+        myNames.pop();
+        document.getElementById("array").innerHTML= myNames;
     }
 </script>
 
 
+
+<input type="button" onclick="addArray()" value="Add Suleman to the array" />
+<input type="button" onclick="removeArray()" value="Remove names from the array" />
 
 </body>
 </html>
