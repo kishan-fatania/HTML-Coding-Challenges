@@ -6,18 +6,27 @@
     <script src="myScripts.js"></script>
 </head>
 <body>
-This function accepts a number and outputs its square.
+Creating a script that outputs "Hello World!"<br>
+<script>
+    window.alert("Hello World!");
+</script>
 
+Outputting the contents of a variable using three different methods
+<script>
+    var x = "'Kishan'"
+    window.alert(x);
+    console.log(x);
+    document.write(x);
+</script>
+<br>
+This function accepts a number and outputs its square.
 <script>
     function square(number){
         var x = number ** 2;
-        document.write(x);
+        document.getElementById("demo").innerText = (x);
     }
-    square(5);
 </script>
-
 <br>
-
 This function accepts 3 numbers and returns the sum of them
 <script>
     function sum(p1, p2, p3){
@@ -25,18 +34,13 @@ This function accepts 3 numbers and returns the sum of them
         var y = p2;
         var z = p3;
         var a = x + y + z;
-        document.write(a);
+        document.getElementById("demo").innerText = (a);
     }
-    sum(1,2,4);
 </script>
-
 <br>
-
 This function creates a Person object with three values: name, age and occupation. It then outputs the contents of that object before editing and outputting them again.
 <br>
-
 <script>
-
    function personEdit() {
 
        var person = {
@@ -58,39 +62,66 @@ This function creates a Person object with three values: name, age and occupatio
        document.writeln(person.age);
        document.writeln(person.occupation);
    }
-
 personEdit();
-
 </script>
-
-
-
 <br>
 Creating buttons that call the above functions when clicked.
 <br>
-
 <input type="button" onclick="square(5)" value="Calculate 5 squared" />
 <input type="button" onclick="sum(5,5,5)" value="Calculate the sum of 5 + 5 + 5" />
 
 
-
-
-
-
+<p id="demo">
+</p>
 
 <script>
-    function ageEdit(i){
-        var newAge = person.age + i;
-        document.write(newAge);
+    function ageEdit() {
+        var j = person.age++;
+        document.getElementById("demo").innerText = (j);
     }
-    var person = {
-        name: "Kishan",
-        age: 22,
-        occupation: "Trainee",
+        var person = {
+            name: "Kishan",
+            age: 22,
+            occupation: "Trainee",
+        }
+
+</script>
+<input type="button" onclick="ageEdit()" value="Increase Kishan's age" />
+<br>
+
+<p id="yourName">Click the button to create a person here</p>
+<p id="yourAge"></p>
+<p id="yourOcc"></p>
+
+
+<input type="text"
+       id = "nameText"
+       placeholder="Enter person name"/>
+<input type="number"
+       id = "ageText"
+       placeholder="Enter person age"/>
+<input type="text"
+       id = "occupationText"
+       placeholder="Enter person occupation"/>
+
+<input type="button" onclick="userPersonCreator()" value="Create your person" />
+
+<script>
+    function userPersonCreator() {
+
+        var userPerson = {
+            name: document.getElementById("nameText").value,
+            age: document.getElementById("ageText").value,
+            occupation: document.getElementById("occupationText").value,
+        }
+
+        document.getElementById("yourName").innerText=(userPerson.name);
+        document.getElementById("yourAge").innerText=(userPerson.age);
+        document.getElementById("yourOcc").innerText=(userPerson.occupation);
     }
 </script>
 
-<input type="button" onclick="ageEdit(5)" value="Increase Kishan's age by 5 years" />
+
 
 </body>
 </html>
